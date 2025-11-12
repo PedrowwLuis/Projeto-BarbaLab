@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Estilo Fino</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navegação -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">💈 Estilo Fino</h1>
+      <ul class="nav-links">
+        <li><a href="#home">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#equipe">Equipe</a></li>
+        <li><a href="#agendamento">Agendamento</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Início -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>O seu estilo começa aqui</h2>
+      <p>Tradição, cuidado e estilo em cada corte.</p>
+      <a href="#agendamento" class="btn">Agende seu horário</a>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos" class="section">
+    <h2>Nossos Serviços</h2>
+    <div class="servicos-container">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3211/3211711.png" alt="Corte de cabelo">
+        <h3>Corte Masculino</h3>
+        <p>Estilo clássico ou moderno, feito sob medida para você.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3211/3211708.png" alt="Barba">
+        <h3>Barba</h3>
+        <p>Modelagem e hidratação para realçar seu visual.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3211/3211715.png" alt="Combo">
+        <h3>Combo Corte + Barba</h3>
+        <p>O pacote completo para sair renovado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipe -->
+  <section id="equipe" class="section equipe">
+    <h2>Nossa Equipe</h2>
+    <div class="equipe-container">
+      <div class="membro">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Barbeiro 1">
+        <h3>João Silva</h3>
+        <p>Especialista em cortes clássicos.</p>
+      </div>
+      <div class="membro">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Barbeiro 2">
+        <h3>Lucas Pereira</h3>
+        <p>Expert em barbas e visuais modernos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agendamento -->
+  <section id="agendamento" class="section agendamento">
+    <h2>Agende seu horário</h2>
+    <form id="form-agendamento">
+      <input type="text" placeholder="Seu nome" required>
+      <input type="tel" placeholder="Telefone" required>
+      <input type="datetime-local" required>
+      <button type="submit" class="btn">Agendar</button>
+    </form>
+  </section>
+
+  <!-- Contato -->
+  <footer id="contato">
+    <h3>📍 Rua Principal, 123 - Centro</h3>
+    <p>📞 (11) 99999-9999 | ✉️ contato@estilofino.com</p>
+    <p>&copy; 2025 Barbearia Estilo Fino. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
