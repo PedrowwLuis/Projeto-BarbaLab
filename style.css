@@ -14,6 +14,67 @@
     justify-content: center;
     align-items: center;
     color: #f5f5f5;
+    transition: all 0.3s ease;
+  }
+
+  /* Tema claro */
+  body.light-theme {
+    background: linear-gradient(135deg, #f0f0f0, #ffffff);
+    color: #333;
+  }
+
+  /* Slider de tema */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #333;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+  }
+
+  body.light-theme .theme-toggle {
+    background: #e0e0e0;
+  }
+
+  .theme-toggle .slider {
+    width: 24px;
+    height: 24px;
+    background: #e2b007;
+    border-radius: 50%;
+    position: absolute;
+    left: 3px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  body.light-theme .theme-toggle .slider {
+    left: 33px;
+  }
+
+  .theme-toggle .sun,
+  .theme-toggle .moon {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  .theme-toggle .icon::before {
+    content: '🌙';
+  }
+
+  body.light-theme .theme-toggle .icon::before {
+    content: '☀️';
   }
   
   /* Container geral */
@@ -29,11 +90,22 @@
     width: 320px;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     margin-top: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  body.light-theme .login-box {
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
   }
   
   .login-box h2 {
     margin-bottom: 1.5rem;
     color: #e2b007;
+  }
+
+  body.light-theme .login-box h2 {
+    color: #b8860b;
   }
   
   /* Inputs */
@@ -47,6 +119,10 @@
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
   }
+
+  body.light-theme .input-group label {
+    color: #555;
+  }
   
   .input-group input {
     width: 100%;
@@ -55,6 +131,14 @@
     border-radius: 5px;
     outline: none;
     font-size: 1rem;
+    background: #2a2a2a;
+    color: #f5f5f5;
+  }
+
+  body.light-theme .input-group input {
+    background: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
   }
   
   /* Botão */
@@ -80,11 +164,19 @@
     color: #ff4c4c;
     font-size: 0.9rem;
   }
+
+  body.light-theme .error-message {
+    color: #d32f2f;
+  }
   
   /* Responsivo */
   @media (max-width: 400px) {
     .login-box {
       width: 90%;
     }
+    
+    .theme-toggle {
+      top: 15px;
+      right: 15px;
+    }
   }
-  
