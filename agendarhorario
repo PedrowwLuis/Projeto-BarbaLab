@@ -1,0 +1,35 @@
+<?php
+   
+    echo "<h1>Agende seu Horário</h1>";
+?>
+<form action="/action_page.php">
+    <p>Preencha os dados abaixo para agendar seu horário no BarbaLab.</p>
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input type="text" class="form-control" id="nome" placeholder="Seu nome" name="nome" required>
+    </div>
+    <div class="mb-3 mt-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Seu melhor email" name="email" required>
+    </div>
+    <div class="mb-3">
+        <label for="servico" class="form-label">Serviço Desejado:</label>
+        <select class="form-select" id="servico" name="servico">
+            <option>Corte de Cabelo</option>
+            <option>Barba Completa</option>
+            <option>Corte e Barba</option>
+            <option>Tratamento Capilar</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="datahora" class="form-label">Data e Hora:</label>
+        <input type="datetime-local" class="form-control" id="datahora" name="datahora" required>
+    </div>
+
+    <div class="form-check mb-3">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="promocoes"> Aceito receber promoções do BarbaLab
+        </label>
+    </div>
+    <button type="submit" class="btn btn-secondary">Confirmar Agendamento</button>
+</form>
