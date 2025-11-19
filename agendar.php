@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento BarbaLab</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo Personalizado -->
+    <style>
+        body {
+            background: #f2f2f2;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .modal-content {
+            border-radius: 14px !important;
+        }
+
+        .modal-header {
+            padding: 20px;
+        }
+
+        .modal-footer {
+            padding: 12px;
+        }
+
+        /* Animação suave no abrir */
+        .modal.fade .modal-dialog {
+            transform: translateY(-20px);
+            transition: all 0.35s ease-out;
+        }
+        .modal.show .modal-dialog {
+            transform: translateY(0);
+        }
+
+        /* Botão que abre o modal */
+        .btn-open-modal {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container text-center mt-5">
+    <button type="button" class="btn btn-dark btn-lg btn-open-modal" data-bs-toggle="modal" data-bs-target="#agendamentoModal">
+        Agendar Horário
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="agendamentoModal" tabindex="-1" aria-labelledby="agendamentoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content shadow-lg">
+
+      <!-- Cabeçalho -->
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="agendamentoLabel">Agende seu Horário</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Corpo do Modal -->
+      <div class="modal-body bg-light">
+
+        <h4 class="text-center mb-3 fw-bold">BarbaLab</h4>
+
+        <p class="text-muted text-center mb-4">
+          Preencha os dados abaixo para realizar seu agendamento.
+        </p>
+
+        <form id="formAgendamento" class="px-2">
+
+          <!-- Nome -->
+          <div class="mb-3">
+            <label for="nome" class="form-label fw-semibold">Nome:</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="nome" 
+              placeholder="Seu nome completo" 
+              name="nome" 
+              required
+            >
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Email:</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              placeholder="Seu melhor email" 
+              name="email" 
+              required
+            >
+          </div>
+
+          <!-- Serviço -->
+          <div class="mb-3">
+            <label for="servico" class="form-label fw-semibold">Serviço Desejado:</label>
+            <select class="form-select" id="servico" name="servico" required>
+              <option disabled selected>Selecione...</option>
+              <option>Corte de Cabelo</option>
+              <option>Barba Completa</option>
+              <option>Corte e Barba</option>
+              <option>Tratamento Capilar</option>
+            </select>
+          </div>
+
+          <!-- Data e Hora -->
+          <div class="mb-3">
+            <label for="datahora" class="form-label fw-semibold">Data e Hora:</label>
+            <input 
+              type="datetime-local" 
+              class="form-control" 
+              id="datahora" 
+              name="datahora" 
+              required
+            >
+          </div>
+
+          <!-- Promoções -->
+          <div class="form-check mb-3">
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
+              id="promocoes" 
+              name="promocoes"
+            >
+            <label class="form-check-label" for="promocoes">
+              Aceito receber promoções do BarbaLab
+            </label>
+          </div>
+
+          <!-- Botão -->
+          <button type="submit" class="btn btn-dark w-100 py-2 fw-semibold">
+            Confirmar Agendamento
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="modal-footer bg-dark text-white">
+        <small class="mx-auto">BarbaLab © Todos os direitos reservados</small>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS + Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript personalizado -->
+<script>
+    document.getElementById("formAgendamento").addEventListener("submit", function(e) {
+        e.preventDefault(); // impede envio real
+
+        // validação simples
+        const nome = document.getElementById("nome").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const servico = document.getElementById("servico").value;
+        const datahora = document.getElementById("datahora").value;
+
+        if (!nome || !email || servico === "Selecione..." || !datahora) {
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return;
+        }
+
+        // sucesso
+        alert("Agendamento realizado com sucesso! 🎉");
+
+        // fecha o modal após envio
+        const modal = bootstrap.Modal.getInstance(document.getElementById("agendamentoModal"));
+        modal.hide();
+
+        // limpa o formulário
+        document.getElementById("formAgendamento").reset();
+    });
+</script>
+
+</body>
+</html>
