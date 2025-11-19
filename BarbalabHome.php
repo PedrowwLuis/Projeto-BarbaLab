@@ -48,7 +48,7 @@
 
     .hero {
       height: 90vh;
-      background: url('https://images.unsplash.com/photo-1599351431202-1c54fdbf108b?auto=format&fit=crop&w=1400&q=80') no-repeat center/cover;
+      background: url('barber.jpg') no-repeat center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
