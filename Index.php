@@ -120,9 +120,10 @@
   <header>
     <h1>BarbaLab</h1>
     <nav>
-      <a href="#home">Home</a>
+      <a href="index.php">Home</a>
       <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
+      <a href="Clientes\registrocliente.html">Agendamento</a>
+      <a href="Admin\login_adm.php">Admin</a>
     </nav>
   </header>
 
