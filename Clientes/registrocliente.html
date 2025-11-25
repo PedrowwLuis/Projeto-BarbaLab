@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - BarbaLab</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+    <h1>BarbaLab</h1>
+    <nav>
+      <a href="../index.php">Home</a>
+      <a href="../index.php#servicos">Serviços</a>
+      <a href="registrocliente.html">Agendamento</a>
+      <a href="../Admin/login_adm.php">Admin</a>
+    </nav>
+  </header>
+  
+  <div class="theme-toggle" id="themeToggle">
+    <span class="moon"></span>
+    <div class="slider">
+      <span class="icon"></span>
+    </div>
+  </div>
+
+  <div class="login-container">
+  <div class="login-box">
+      <h1>💈 Agendamento - BarbaLab</h1>
+      <h2>Cadastro Cliente Agendamento BarbaLab</h2>
+       <form method="POST" action="cadastro_cliente.php">
+        <div class="input-group">
+          <label for="username">Usuário</label>
+          <input type="text" name="nome" placeholder="Nome completo" required>
+        </div>
+        <div class="input-group">
+          <label for="email">email</label>
+          <input type="email" name="email" placeholder="Seu email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Senha</label>
+          <input type="password" name="senha" placeholder="Senha" required>
+        </div>
+        <button type="submit" class="btn">Cadastrar</button>
+        <p class="error-message" id="error-message"></p>
+        <p>Já tem conta? <a href="login_cliente.php">Faça login</a></p>
+        
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 BarbaLab - Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
