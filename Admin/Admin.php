@@ -20,6 +20,7 @@ $result = $conn->query($sql);
 <meta charset="UTF-8">
 <title>Gerenciar Agendamentos - BarbaLab</title>
 <link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../script.js">
 </head>
 <body>
 
@@ -54,7 +55,7 @@ $result = $conn->query($sql);
         <?php while($row = $result->fetch_assoc()): ?>
           <tr style="border-bottom: 1px solid #333;">
             <td style="padding:10px;"><?= $row['nome']; ?></td>
-            <td><?= $row['serviços']; ?></td>
+            <td><?= $row['servicos']; ?></td>
             <td><?= date("d/m/Y", strtotime($row['data'])); ?></td>
             <td><?= substr($row['hora'],0,5); ?></td>
 

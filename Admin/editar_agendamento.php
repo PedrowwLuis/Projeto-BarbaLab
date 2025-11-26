@@ -32,13 +32,13 @@ $ag = $result->fetch_assoc();
 // Se enviar o formulário, atualizar
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $servico = $_POST['servico'];
+    $servicos = $_POST['servico'];
     $data = $_POST['data'];
     $hora = $_POST['hora'];
 
-    $update = "UPDATE agendamentos SET servico=?, data=?, hora=? WHERE id=?";
+    $update = "UPDATE agendamento SET servicos=?, data=?, hora=? WHERE id=?";
     $stmt2 = $conn->prepare($update);
-    $stmt2->bind_param("sssi", $servico, $data, $hora, $id);
+    $stmt2->bind_param("sssi", $servicos, $data, $hora, $id);
 
     if ($stmt2->execute()) {
         echo "<script>alert('Agendamento atualizado com sucesso!'); window.location='admin.php';</script>";
@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="input-group">
                 <label>Serviço</label>
-                <input type="text" name="servico" value="<?= $ag['serviços']; ?>" required>
+                <input type="text" name="servico" value="<?= $ag['servicos']; ?>" required>
             </div>
 
             <div class="input-group">

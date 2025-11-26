@@ -78,7 +78,7 @@ if (!empty($extras)) {
     // =============================
     // 3️⃣ INSERIR NO BANCO – COM NOME E EMAIL DO LOGIN
     // =============================
-    $sqlInsert = "INSERT INTO agendamento (nome, email, serviços, data, hora) 
+    $sqlInsert = "INSERT INTO agendamento (nome, email, servicos, data, hora) 
                   VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sqlInsert);
@@ -89,7 +89,7 @@ if (!empty($extras)) {
         window.location='Clientes/agendamento.php';</script>";
     } else {
         echo "<script>alert('Erro ao agendar!'); 
-        window.location='form_agendamento.php';</script>";
+        window.location='Clientes/agendamento.php';</script>";
     }
 }
 ?>
