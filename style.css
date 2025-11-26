@@ -5,32 +5,71 @@
   box-sizing: border-box;
 }
 
+/* VARIÁVEIS DE TEMA */
+:root {
+  --bg-gradient-start: #000;
+  --bg-gradient-end: #2a2a2a;
+  --text-color: #f5f5f5;
+  --header-bg: #000;
+  --header-border: #444;
+  --link-color: #fff;
+  --link-hover: #e2b007;
+  --box-bg: #1b1b1b;
+  --box-border: transparent;
+  --box-shadow: rgba(0,0,0,0.5);
+  --input-bg: #2a2a2a;
+  --input-color: #f5f5f5;
+  --input-border: transparent;
+  --footer-bg: #000;
+  --footer-border: #444;
+  --card-bg: #1b1b1b;
+  --card-border: #333;
+  --toggle-bg: #333;
+  --toggle-slider: #e2b007;
+}
+
+body.light-theme {
+  --bg-gradient-start: #f0f0f0;
+  --bg-gradient-end: #ffffff;
+  --text-color: #333;
+  --header-bg: #fff;
+  --header-border: #ccc;
+  --link-color: #444;
+  --link-hover: #b8860b;
+  --box-bg: #fff;
+  --box-border: #ddd;
+  --box-shadow: rgba(0,0,0,0.15);
+  --input-bg: #f9f9f9;
+  --input-color: #333;
+  --input-border: #ddd;
+  --footer-bg: #f2f2f2;
+  --footer-border: #ccc;
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --toggle-bg: #e0e0e0;
+  --toggle-slider: #e2b007;
+}
+
 /* BODY */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #000, #2a2a2a);
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
   min-height: 100vh;
-  color: #f5f5f5;
+  color: var(--text-color);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
-/* TEMA CLARO */
-body.light-theme {
-  background: linear-gradient(135deg, #f0f0f0, #ffffff);
-  color: #333;
-}
-
 /* HEADER */
 header {
   width: 100%;
-  background: #000;
+  background: var(--header-bg);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #444;
+  border-bottom: 2px solid var(--header-border);
 }
 
 header h1 {
@@ -38,64 +77,67 @@ header h1 {
   font-size: 28px;
 }
 
-body.light-theme header {
-  background: #fff;
-  border-bottom: 2px solid #ccc;
-}
-
 nav a {
   text-decoration: none;
-  color: #fff;
+  color: var(--link-color);
   margin-left: 15px;
   font-weight: bold;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #e2b007;
+  color: var(--link-hover);
 }
 
-body.light-theme nav a {
-  color: #444;
-}
-
-body.light-theme nav a:hover {
-  color: #b8860b;
-}
-
-/* BOTÃO DE TEMA */
+/* BOTÃO DE TEMA - Toggle Switch Deslizante */
 .theme-toggle {
-  position: absolute;
-  top: 90px;    /* logo abaixo do header */
-  right: 20px;
-  width: 60px;
-  height: 30px;
-  background: #333;
-  border-radius: 30px;
+  position: fixed;
+  top: 90px;
+  right: 30px;
+  width: 70px;
+  height: 34px;
+  background: var(--toggle-bg);
+  border-radius: 34px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
   padding: 3px;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border: 2px solid var(--header-border);
 }
 
-body.light-theme .theme-toggle {
-  background: #e0e0e0;
+.theme-toggle:hover {
+  transform: scale(1.05);
 }
 
 .theme-toggle .slider {
-  width: 24px;
-  height: 24px;
-  background: #e2b007;
+  width: 28px;
+  height: 28px;
+  background: var(--toggle-slider);
   border-radius: 50%;
   position: absolute;
   left: 3px;
-  transition: 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.theme-toggle .slider::before {
+  content: '🌙';
+  font-size: 16px;
+  position: absolute;
 }
 
 body.light-theme .theme-toggle .slider {
-  left: 33px;
+  left: 37px;
+}
+
+body.light-theme .theme-toggle .slider::before {
+  content: '☀️';
 }
 
 /* CONTAINER DO LOGIN */
@@ -110,12 +152,13 @@ body.light-theme .theme-toggle .slider {
 
 /* BOX DO LOGIN */
 .login-box {
-  background: #1b1b1b;
+  background: var(--box-bg);
   padding: 2rem;
   border-radius: 10px;
   width: 340px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px var(--box-shadow);
   text-align: center;
+  border: 1px solid var(--box-border);
 }
 
 .login-box h1 {
@@ -126,17 +169,7 @@ body.light-theme .theme-toggle .slider {
 .login-box h2 {
   font-size: 18px;
   margin-bottom: 25px;
-}
-
-body.light-theme .login-box {
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
-}
-
-.login-box h2 {
   color: #e2b007;
-  margin-bottom: 20px;
 }
 
 .input-group {
@@ -156,15 +189,15 @@ body.light-theme .login-box {
   padding: 10px;
   border-radius: 5px;
   font-size: 1rem;
-  border: none;
-  background: #2a2a2a;
-  color: #f5f5f5;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-color);
+  transition: all 0.3s ease;
 }
 
-body.light-theme .input-group input {
-  background: #f9f9f9;
-  color: #333;
-  border: 1px solid #ddd;
+.input-group input:focus {
+  outline: none;
+  border-color: #e2b007;
 }
 
 .btn {
@@ -188,14 +221,9 @@ footer {
   margin-top: auto;
   width: 100%;
   padding: 20px;
-  background: #000;
+  background: var(--footer-bg);
   text-align: center;
-  border-top: 2px solid #444;
-}
-
-body.light-theme footer {
-  background: #f2f2f2;
-  border-top: 2px solid #ccc;
+  border-top: 2px solid var(--footer-border);
 }
 
 /* Select */
@@ -203,16 +231,16 @@ body.light-theme footer {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  background: #2a2a2a;
-  color: #f5f5f5;
+  background: var(--input-bg);
+  color: var(--input-color);
   font-size: 1rem;
-  border: none;
+  border: 1px solid var(--input-border);
+  transition: all 0.3s ease;
 }
 
-body.light-theme .input-group select {
-  background: #f9f9f9;
-  color: #333;
-  border: 1px solid #ddd;
+.input-group select:focus {
+  outline: none;
+  border-color: #e2b007;
 }
 
 /* Checkbox group */
@@ -234,4 +262,34 @@ body.light-theme .input-group select {
 .checkbox-group input[type="checkbox"] {
   transform: scale(1.3);
   cursor: pointer;
+}
+
+/* Tabelas no tema claro */
+body.light-theme table tr {
+  color: #333;
+}
+
+body.light-theme table th,
+body.light-theme table td {
+  border-color: #ddd !important;
+}
+
+/* Links especiais */
+.login-box a {
+  color: #e2b007;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}
+
+body.light-theme .login-box a {
+  color: #b8860b;
+}
+
+/* Animações suaves */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

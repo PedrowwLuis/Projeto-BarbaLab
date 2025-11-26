@@ -64,6 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </nav>
 </header>
 
+<div class="theme-toggle" id="themeToggle">
+  <div class="slider"></div>
+</div>
+
 <div class="login-container">
     <div class="login-box" style="width:420px; text-align:left;">
         <h2>Editar</h2>
@@ -94,6 +98,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <footer>
     <p>© 2025 BarbaLab - Todos os direitos reservados.</p>
 </footer>
+
+<script src="../script.js"></script>
 
 </body>
 </html>

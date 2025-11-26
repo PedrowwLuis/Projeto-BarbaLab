@@ -1,10 +1,12 @@
-// Variáveis para o drag
+// ========================================
+// SISTEMA DE TEMA ESCURO/CLARO COM DRAG
+// ========================================
+
 let isDragging = false;
 let startX = 0;
+let hasDragged = false;
 
-// Alternância de tema com drag
 const themeToggle = document.getElementById('themeToggle');
-const slider = themeToggle?.querySelector('.slider');
 
 if (themeToggle) {
     // Eventos de mouse
@@ -13,34 +15,27 @@ if (themeToggle) {
     document.addEventListener('mouseup', endDrag);
 
     // Eventos de touch para mobile
-    themeToggle.addEventListener('touchstart', startDrag);
-    document.addEventListener('touchmove', drag);
+    themeToggle.addEventListener('touchstart', startDrag, { passive: false });
+    document.addEventListener('touchmove', drag, { passive: false });
     document.addEventListener('touchend', endDrag);
-
-    // Clique simples (sem arrastar)
-    themeToggle.addEventListener('click', function(e) {
-        if (!isDragging) {
-            toggleTheme();
-        }
-    });
 }
 
 function startDrag(e) {
-    isDragging = false; // Reset no início
+    isDragging = true;
+    hasDragged = false;
     startX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
     e.preventDefault();
 }
 
 function drag(e) {
-    if (!startX) return;
+    if (!isDragging || !startX) return;
     
     const currentX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     const deltaX = currentX - startX;
     
-    // Se arrastar mais de 15px, marca como dragging
-    if (Math.abs(deltaX) > 15) {
-        isDragging = true;
-        
+    // Se arrastar mais de 20px, marca como dragged e alterna o tema
+    if (Math.abs(deltaX) > 20) {
+        hasDragged = true;
         const isLight = document.body.classList.contains('light-theme');
         
         // Arrasta para direita = tema claro, esquerda = tema escuro
@@ -54,16 +49,23 @@ function drag(e) {
     }
 }
 
-function endDrag() {
+function endDrag(e) {
+    if (isDragging && !hasDragged) {
+        // Se não arrastou, age como um clique normal
+        toggleTheme();
+    }
+    
     setTimeout(() => {
         isDragging = false;
         startX = 0;
-    }, 100);
+        hasDragged = false;
+    }, 50);
 }
 
 function resetDrag() {
     startX = 0;
     isDragging = false;
+    hasDragged = false;
 }
 
 function toggleTheme() {
@@ -81,6 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('light-theme');
     }
 });
+
+// ========================================
+// SCRIPTS DE LOGIN E AGENDAMENTO
+// ========================================
 
 // Script de login
 document.getElementById('loginForm')?.addEventListener('submit', function(e) {

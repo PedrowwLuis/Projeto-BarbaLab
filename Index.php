@@ -4,48 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BarbaLab - Home</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #111;
-      color: #fff;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: #000;
-      border-bottom: 2px solid #444;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    header h1 {
-      font-size: 28px;
-      color: #e0b37a;
-    }
-
-    nav a {
-      margin-left: 20px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #e0b37a;
-    }
-
     .hero {
       height: 90vh;
       background: url('barber.jpg') no-repeat center/cover;
@@ -58,28 +18,15 @@
 
     .hero h2 {
       font-size: 48px;
+      color: #fff !important;
       text-shadow: 2px 2px 10px #000;
     }
 
     .hero p {
       margin-top: 10px;
       font-size: 20px;
+      color: #fff !important;
       text-shadow: 2px 2px 8px #000;
-    }
-
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 18px;
-      background: #e0b37a;
-      border: none;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #c79a60;
     }
 
     .section {
@@ -95,24 +42,17 @@
     }
 
     .card {
-      background: #1a1a1a;
+      background: var(--card-bg);
       padding: 20px;
       border-radius: 10px;
-      border: 1px solid #333;
+      border: 1px solid var(--card-border);
       transition: 0.3s;
+      box-shadow: 0 2px 8px var(--box-shadow);
     }
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: #e0b37a;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      border-top: 2px solid #444;
-      margin-top: 40px;
+      border-color: #e2b007;
     }
   </style>
 </head>
@@ -126,6 +66,10 @@
       <a href="Admin\login_adm.php">Admin</a>
     </nav>
   </header>
+
+  <div class="theme-toggle" id="themeToggle">
+    <div class="slider"></div>
+  </div>
 
   <section class="hero" id="home">
     <div>
@@ -163,6 +107,7 @@
     <p>© 2025 BarbaLab - Todos os direitos reservados.</p>
   </footer>
 
+  <script src="script.js"></script>
   <script>
     function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });

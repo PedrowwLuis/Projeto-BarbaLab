@@ -42,11 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <a href="../Admin/login_adm.php">Admin</a>
     </nav>
   </header>
+  
   <div class="theme-toggle" id="themeToggle">
-    <span class="moon"></span>
-    <div class="slider">
-      <span class="icon"></span>
-    </div>
+    <div class="slider"></div>
   </div>
 
  <div class="login-container">
@@ -72,6 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p>© 2025 BarbaLab - Todos os direitos reservados.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
