@@ -9,8 +9,9 @@ if (!isset($_SESSION['adm'])) {
 }
 
 // Buscar todos os agendamentos
-$sql = "SELECT id, nome, serviços, data, hora FROM agendamento ORDER BY data, hora";
+$sql = "SELECT * FROM agendamento ORDER BY data";
 $result = $conn->query($sql);
+
 
 ?>
 <!DOCTYPE html>
