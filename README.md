@@ -1,6 +1,5 @@
 # 💈🧔 BarbaLab – A Arte da Barba Bem Feita
-
-![Barbearia GIF](https://i.pinimg.com/originals/29/49/76/294976ff975c5702188d71586a77b2c2.gif)
+![Barbearia GIF](https://miro.medium.com/v2/resize:fit:1000/1*ToJfUC7aIfCpS3Hq3_rMdw.gif)
 
 Bem-vindo ao **BarbaLab**, uma barbearia moderna onde cada cliente recebe cuidado, estilo e aquele atendimento especial que faz a diferença.  
 Aqui a regra é simples: **conforto, estilo e barbeiros que sabem o que fazem.**
