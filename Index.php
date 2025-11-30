@@ -100,7 +100,7 @@
   <section class="section" id="contato">
     <h2>Contato</h2>
     <p>Agende seu horário pelo WhatsApp:</p>
-    <p style="margin-top: 10px; font-size: 22px; color: #e0b37a;">(99) 99999-9999</p>
+    <p style="margin-top: 10px; font-size: 22px; color: #e0b37a;">(83) 99365-2498</p>
   </section>
 
   <footer>
