@@ -83,16 +83,20 @@
     <h2>Nossos Serviços</h2>
     <div class="servicos">
       <div class="card">
-        <h3>Corte de Cabelo</h3>
-        <p>Estilo moderno ou clássico, sempre com precisão científica.</p>
+        <h3 style="margin-top:50px;">Corte de Cabelo</h3>
+        <p style="margin-top:50px;">Estilo moderno ou clássico, sempre com precisão científica.</p>
+
+        <button class=btn onclick="window.location='Clientes/registrocliente.html'" style="margin-top:50px;">Faça já o seu Agendamento!</button>
       </div>
       <div class="card">
-        <h3>Barba Completa</h3>
-        <p>Higienização, alinhamento e acabamento perfeito.</p>
+        <h3 style="margin-top:50px;">Barba Completa</h3>
+        <p style="margin-top:50px;">Higienização, alinhamento e acabamento perfeito.</p>
+        <button class=btn onclick="window.location='Clientes/registrocliente.html'" style="margin-top:50px;">Faça já o seu Agendamento!</button>
       </div>
       <div class="card">
-        <h3>Navalha Premium</h3>
-        <p>Experiência tradicional com técnica aprimorada.</p>
+        <h3 style="margin-top:50px;">Navalha Premium</h3>
+        <p style="margin-top:50px;">Experiência tradicional com técnica aprimorada.</p>
+        <button class=btn onclick="window.location='Clientes/registrocliente.html'" style="margin-top:50px;">Faça já o seu Agendamento!</button>
       </div>
     </div>
   </section>

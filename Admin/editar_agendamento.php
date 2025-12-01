@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             <div class="input-group">
                 <label>Serviço</label>
-                <input type="text" name="servico" value="<?= $ag['servicos']; ?>" required>
+                <input type="text" name="servico" value="<?= $ag['serviços']; ?>" required>
             </div>
 
             <div class="input-group">

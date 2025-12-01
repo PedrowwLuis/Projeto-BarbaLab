@@ -30,7 +30,7 @@ if (!isset($_SESSION['cliente'])) {
 <div class="login-container">
   <div class="login-box">
       <h1>💈 Agendamento - BarbaLab</h1>
-      <h2>Escolha seu horário</h2>
+      <h2>Escolha seu horário e os Serviços desejados</h2>
 
     <form method="POST" action="../agendar.php">
 

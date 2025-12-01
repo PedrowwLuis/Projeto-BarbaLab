@@ -21,10 +21,10 @@ $servicoPrincipal = $_POST["servicoPrincipal"];
 $extras = isset($_POST["extras"]) ? $_POST["extras"] : [];
 
 // Junta tudo em um campo só
-$servico = $servicoPrincipal;
+$servicos = $servicoPrincipal;
 
 if (!empty($extras)) {
-    $servico .= " + " . implode(" + ", $extras);
+    $servicos .= " + " . implode(" + ", $extras);
 }
 
     $data = $_POST["data"];
@@ -49,7 +49,7 @@ if (!empty($extras)) {
 
     if ($resSemana->num_rows > 0) {
         echo "<script>alert('Você já tem um horário marcado essa semana.'); 
-        window.location='form_agendamento.php';</script>";
+        window.location='Clientes/agendamento.php';</script>";
         exit;
     }
 
@@ -71,18 +71,18 @@ if (!empty($extras)) {
 
     if ($resOcupado->num_rows > 0) {
         echo "<script>alert('Este horário já está ocupado. Escolha outro!'); 
-        window.location='form_agendamento.php';</script>";
+        window.location='Clientes/agendamento.php';</script>";
         exit;
     }
 
     // =============================
     // 3️⃣ INSERIR NO BANCO – COM NOME E EMAIL DO LOGIN
     // =============================
-    $sqlInsert = "INSERT INTO agendamento (nome, email, servicos, data, hora) 
+    $sqlInsert = "INSERT INTO agendamento (nome, email, `serviços`, data, hora) 
                   VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sqlInsert);
-    $stmt->bind_param("sssss", $nome, $email, $servico, $data, $hora);
+    $stmt->bind_param("sssss", $nome, $email, $servicos, $data, $hora);
 
     if ($stmt->execute()) {
         echo "<script>alert('Horário agendado com sucesso!'); 

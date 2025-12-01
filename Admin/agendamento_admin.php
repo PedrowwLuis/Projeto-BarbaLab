@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['cliente'])) {
+if (!isset($_SESSION['adm'])) {
     header("Location: login_adm.php");
     exit;
 }
@@ -30,11 +30,22 @@ if (!isset($_SESSION['cliente'])) {
 <div class="login-container">
   <div class="login-box">
       <h1>💈 Agendamento - BarbaLab</h1>
-      <h2>Escolha seu horário</h2>
+      <h2>Agendamento De Serviços ADM</h2>
 
-    <form method="POST" action="../agendar.php">
+    <form method="POST" action="agendar_admin.php">
 
   <div class="input-group">
+    <label>Nome Do Cliente</label>
+    <input type="text" name="nome" required>
+  </div>
+
+  <div class="input-group">
+    <label>Email Do Cliente</label>
+    <input type="email" name="email" required>
+  </div>
+  
+  <div class="input-group">
+  
   <label>Serviços principais</label>
   <select name="servicoPrincipal" required>
       <option value="">Selecione...</option>

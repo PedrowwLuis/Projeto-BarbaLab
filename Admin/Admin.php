@@ -152,7 +152,7 @@ main {
                 <?php while($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?= $row['nome']; ?></td>
-                        <td><?= $row['servicos']; ?></td>
+                        <td><?= $row['serviços']; ?></td>
                         <td><?= date("d/m/Y", strtotime($row['data'])); ?></td>
                         <td><?= substr($row['hora'], 0, 5); ?></td>
 
