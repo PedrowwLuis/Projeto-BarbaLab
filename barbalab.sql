@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/11/2025 às 12:03
+-- Tempo de geração: 03/12/2025 às 01:58
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -44,7 +44,8 @@ INSERT INTO `agendamento` (`id`, `nome`, `email`, `serviços`, `data`, `hora`) V
 (1, 'luca', 'luca@gmail.com', 'Corte de Cabelo e Barba', '2025-11-25', '12:00:00'),
 (3, 'Pedro', 'lucas@gmail.com', 'Corte de Cabelo e Barba', '2025-11-25', '13:00:00'),
 (6, 'Pedro', 'lucas@gmail.com', 'Cabelo e Barba + Sobrancelha + Hidratação', '2025-12-06', '13:00:00'),
-(8, 'adriano', 'adiano@gmail.com', 'Cabelo + Sobrancelha + Pigmentação + Hidratação', '2025-12-12', '13:00:00');
+(8, 'adriano', 'adiano@gmail.com', 'Cabelo + Sobrancelha + Pigmentação + Hidratação', '2025-12-12', '13:00:00'),
+(9, 'Pedro', 'pedroluisdeliraalves@gmail.com', 'Cabelo e Barba + Sobrancelha + Pigmentação + Hidratação', '2025-12-31', '18:00:00');
 
 -- --------------------------------------------------------
 
@@ -53,6 +54,7 @@ INSERT INTO `agendamento` (`id`, `nome`, `email`, `serviços`, `data`, `hora`) V
 --
 
 CREATE TABLE `cadastro_cliente` (
+  `id` int(11) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
   `senha` varchar(150) NOT NULL
@@ -62,11 +64,8 @@ CREATE TABLE `cadastro_cliente` (
 -- Despejando dados para a tabela `cadastro_cliente`
 --
 
-INSERT INTO `cadastro_cliente` (`nome`, `email`, `senha`) VALUES
-('Pedro', 'pedroluisdeliraalves@gmail.com', '123456'),
-('Pedro', 'lucas@gmail.com', '123456'),
-('luca', 'luca@gmail.com', 'luca'),
-('adriano', 'adiano@gmail.com', '123456');
+INSERT INTO `cadastro_cliente` (`id`, `nome`, `email`, `senha`) VALUES
+(5, 'teste', 'teste@gmail.com', 'teste');
 
 -- --------------------------------------------------------
 
@@ -75,6 +74,7 @@ INSERT INTO `cadastro_cliente` (`nome`, `email`, `senha`) VALUES
 --
 
 CREATE TABLE `login_adm` (
+  `id` int(11) NOT NULL,
   `nome` varchar(150) NOT NULL,
   `senha` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -83,9 +83,8 @@ CREATE TABLE `login_adm` (
 -- Despejando dados para a tabela `login_adm`
 --
 
-INSERT INTO `login_adm` (`nome`, `senha`) VALUES
-('[admin]', '[admin]'),
-('admin', 'admin');
+INSERT INTO `login_adm` (`id`, `nome`, `senha`) VALUES
+(1, 'admin', 'admin');
 
 --
 -- Índices para tabelas despejadas
@@ -98,6 +97,18 @@ ALTER TABLE `agendamento`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `cadastro_cliente`
+--
+ALTER TABLE `cadastro_cliente`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `login_adm`
+--
+ALTER TABLE `login_adm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -105,7 +116,19 @@ ALTER TABLE `agendamento`
 -- AUTO_INCREMENT de tabela `agendamento`
 --
 ALTER TABLE `agendamento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de tabela `cadastro_cliente`
+--
+ALTER TABLE `cadastro_cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `login_adm`
+--
+ALTER TABLE `login_adm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

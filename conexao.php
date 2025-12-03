@@ -1,4 +1,6 @@
 <?php
+
+// Parâmetros para acessar o BD
 $host = "localhost:3306";
 $user = "root";
 $pass = "";

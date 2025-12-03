@@ -8,6 +8,6 @@ session_unset();
 session_destroy();
 
 // Redirecionamento para a página login do adm
-header("Location: Admin/login_adm.php");
+header("Location: index.php");
 exit;
 ?>

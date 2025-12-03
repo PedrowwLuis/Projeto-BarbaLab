@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
     <h1>BarbaLab</h1>
     <nav>
-      <a href="../index.php">Home</a>
-      <a href="../index.php#servicos">Serviços</a>
+      <a href="../logout.php">Home</a>
+      <a href="../logout.php#servicos">Serviços</a>
       <a href="../Clientes/registrocliente.html">Agendamento</a>
       <a href="login_adm.php">Admin</a>
     </nav>

@@ -8,6 +8,7 @@ if (!isset($_SESSION['cliente'])) {
     exit;
 }
 
+//Requerimento dos parâmetros do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // PEGA O NOME E EMAIL DA SESSÃO
@@ -33,9 +34,7 @@ if (!empty($extras)) {
     // Junta data + hora
     $datetime = $data . " " . $hora . ":00";
 
-    // =============================
-    // 1️⃣ Verificar se cliente já marcou 1 vez por semana
-    // =============================
+    // Verificação de agendamento semanal
     $sqlSemana = "
         SELECT * FROM agendamento 
         WHERE email = ? 
@@ -53,9 +52,7 @@ if (!empty($extras)) {
         exit;
     }
 
-    // =============================
-    // 2️⃣ Verificar horários ocupados (1h de margem)
-    // =============================
+    // Verificar horários ocupados (1h de margem)
     $sqlOcupado = "
         SELECT * FROM agendamento 
         WHERE data = ? 
@@ -75,9 +72,8 @@ if (!empty($extras)) {
         exit;
     }
 
-    // =============================
-    // 3️⃣ INSERIR NO BANCO – COM NOME E EMAIL DO LOGIN
-    // =============================
+    // INSERIR NO BANCO – COM NOME E EMAIL DO LOGIN
+
     $sqlInsert = "INSERT INTO agendamento (nome, email, `serviços`, data, hora) 
                   VALUES (?, ?, ?, ?, ?)";
 

@@ -2,7 +2,7 @@
 session_start();
 include '../conexao.php';
 
-// ⚠️ Impede acesso sem login de admin
+//  Impede acesso sem login de admin
 if (!isset($_SESSION['adm'])) {
     header("Location: login_adm.php");
     exit;

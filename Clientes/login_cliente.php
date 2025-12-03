@@ -2,6 +2,7 @@
 session_start();
 include '../conexao.php';
 
+//Requerimento dos parâmentros do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
@@ -36,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>
     <h1>BarbaLab</h1>
     <nav>
-      <a href="../index.php">Home</a>
-      <a href="../index.php#servicos">Serviços</a>
+      <a href="../logout.php">Home</a>
+      <a href="../logout.php#servicos">Serviços</a>
       <a href="registrocliente.html">Agendamento</a>
       <a href="../Admin/login_adm.php">Admin</a>
     </nav>

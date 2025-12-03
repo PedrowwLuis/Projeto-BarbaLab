@@ -1,13 +1,15 @@
 <?php
 include "../conexao.php";
 
+// Requerimento do envio do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    //Recebimento dos parêmetros eniviados pelo metodo post do formulário
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    // Verifica se o email já existe
+    // Verificação de email duplicados
     $sqlCheck = "SELECT * FROM cadastro_cliente WHERE email = ?";
     $stmtCheck = $conn->prepare($sqlCheck);
     $stmtCheck->bind_param("s", $email);

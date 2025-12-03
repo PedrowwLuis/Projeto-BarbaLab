@@ -122,7 +122,7 @@ main {
 <header>
   <h1>Gerenciar Agendamentos</h1>
   <nav>
-    <a href="../index.php">Home</a>
+    <a href="../logout.php">Home</a>
     <a href="../logout_adm.php">Sair</a>
   </nav>
 </header>

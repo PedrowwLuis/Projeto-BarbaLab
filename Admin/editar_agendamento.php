@@ -2,7 +2,7 @@
 session_start();
 include '../conexao.php';
 
-// ⚠️ Apenas admins logados podem editar
+// Apenas admins logados podem editar
 if (!isset($_SESSION['adm'])) {
     header("Location: login_adm.php");
     exit;
@@ -29,7 +29,7 @@ if ($result->num_rows == 0) {
 
 $ag = $result->fetch_assoc();
 
-// Se enviar o formulário, atualizar
+// Envio das alterações no agendamento
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $servicos = $_POST['servico'];

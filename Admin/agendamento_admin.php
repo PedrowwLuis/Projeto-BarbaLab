@@ -18,7 +18,7 @@ if (!isset($_SESSION['adm'])) {
 <header>
   <h1>BarbaLab</h1>
   <nav>
-    <a href="../index.php">Home</a>
+    <a href="../logout.php">Home</a>
     <a href="admin.php">Voltar</a>
   </nav>
 </header>
