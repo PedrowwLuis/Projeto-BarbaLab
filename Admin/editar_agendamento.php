@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = $_POST['data'];
     $hora = $_POST['hora'];
 
-    $update = "UPDATE agendamento SET servicos=?, data=?, hora=? WHERE id=?";
+    $update = "UPDATE agendamento SET serviços=?, data=?, hora=? WHERE id=?";
     $stmt2 = $conn->prepare($update);
     $stmt2->bind_param("sssi", $servicos, $data, $hora, $id);
 
